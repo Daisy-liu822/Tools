@@ -59,16 +59,23 @@ class JenkinsDeployer:
         options = webdriver.EdgeOptions()
         if self.headless:
             options.add_argument('--headless')
-        options.add_argument('--disable-gpu')
-        options.add_argument('--no-sandbox')
-        options.add_argument('--disable-dev-shm-usage')
-        # 增加以下配置来抑制更多日志
-        options.add_argument('--log-level=3')  # 仅显示 FATAL
-        options.add_argument('--silent')
-        options.add_argument('--disable-logging')
-        options.add_argument('--disable-smartscreen')  # 禁用 SmartScreen
-        options.add_experimental_option('excludeSwitches', ['enable-logging', 'enable-automation'])
-        options.add_experimental_option('useAutomationExtension', False)
+        else:
+            options.add_argument('--disable-gpu')
+            options.add_argument('--no-sandbox')
+            options.add_argument('--disable-dev-shm-usage')
+            # 增加以下配置来抑制更多日志
+            options.add_argument('--log-level=3')  # 仅显示 FATAL
+            options.add_argument('--silent')
+            options.add_argument('--disable-logging')
+            options.add_argument('--disable-smartscreen')  # 禁用 SmartScreen
+            options.add_argument('--disable-identity-provider-fetch')  # 禁用身份验证提供者获取
+            options.add_argument('--disable-qqbrowser-importer')  # 禁用 QQBrowser 导入器
+            options.add_experimental_option('excludeSwitches', ['enable-logging', 'enable-automation'])
+            options.add_experimental_option('useAutomationExtension', False)
+            options.add_argument('--disable-extensions')  # 禁用扩展
+            options.add_argument('--disable-infobars')  # 禁用信息栏
+            options.add_argument('--disable-popup-blocking')  # 禁用弹出窗口拦截
+            options.add_argument('--disable-features=IsolateOrigins,site-per-process')  # 禁用隔离特性
         return options
 
     def deploy(self, services_branches: dict):
@@ -187,7 +194,7 @@ class JenkinsDeployer:
                 self.logger.warning(f"等待元素 {locator} 失败，重试第 {attempt + 1} 次")
                 time.sleep(1)
 
-    def _check_build_result(self, driver=None, max_retries=60):
+    def _check_build_result(self, driver=None, max_retries=30):
         """检查构建结果"""
         retry_interval = 10
         driver = driver or self.driver
@@ -269,9 +276,13 @@ class JenkinsDeployer:
                     )
                 
                 for future in futures:
-                    service, success = future.result()
-                    results[service] = success
-                    self.logger.info(f"服务 {service} 部署{'成功' if success else '失败'}")
+                    try:
+                       service, success = future.result()
+                       results[service] = success
+                       self.logger.info(f"服务 {service} 部署{'成功' if success else '失败'}")
+                    except Exception as e:
+                       self.logger.error(f"部署服务 {service} 时发生错误: {str(e)}")
+                       results[service] = False
                     
             finally:
                 # 清理所有driver
@@ -293,7 +304,7 @@ class JenkinsDeployer:
             self.logger.error(f"部署服务 {service} 时发生错误: {str(e)}")
             return service, False
 
-    @retry_decorator(retries=3)
+    @retry_decorator(retries=2)
     def _fill_branch_and_build(self, driver, branch):
         """填写分支并触发构建"""
         branch_input = WebDriverWait(driver, 10).until(

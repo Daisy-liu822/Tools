@@ -36,12 +36,17 @@ services:
 
   concurrent:
     # pp-iptb-service: master
-    pp-lt-aims-web: release-5.3.32
-    pp-lt-aims-service-api: release-5.3.32
-    pp-customer-service: release-8.113
-    lt-doc-service-api: release-5.3.32
-    pp-wqs-service: release-1.0.97
-    pp-public-api: release-1.2.216
-    pp-back-office: release-8.113
-    pp-psi-web: release-8.113
-    pp-node-aca: release-1.12.70
+    # pp-lt-aims-web: release-5.3.32
+    # pp-lt-aims-service-api: release-5.3.32
+    # pp-customer-service: release-8.113
+    # lt-doc-service-api: release-5.3.32
+    # pp-wqs-service: release-1.0.97
+    # pp-public-api: release-1.2.216
+    # pp-back-office: release-8.113
+    # pp-psi-web: release-8.113
+    # pp-node-aca: release-1.12.70
+    pp-sso-management: master
+    pp-sso-server: master
+    pp-sample-web: master
+    pp-wqs-common: master
+    pp-report-service: master

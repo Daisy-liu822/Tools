@@ -1,0 +1,47 @@
+# 默认配置
+default:
+  headless: true
+  max_workers: 3
+  build_timeout: 1800
+
+# 需要跳过的服务
+skip_services:
+  - pp-qrcode-cloud
+  - pp-claim-cloud
+  - pp-dynamic-order-cloud
+  - pp-exchange-console
+  - pp-e-signature-web
+  - pp-exchange-console
+  - pp-factory-service
+  - pp-file-service
+  - pp-gi-service
+  - pp-gi-web
+  - pp-ip-service
+  - pp-ip-template-service
+  - pp-ip-template-web
+  - pp-lt-external-service-api
+  - pp-node-aa-pdf-generator
+  - pp-parameter-service
+  - pp-parameter-web
+
+# 服务和分支配置
+services:
+  sequential:
+    # pp-iptb-service: master
+    it-dependency: SP-20894
+    # pp-lt-aims-web: SP-21923
+    # pp-lt-aims-service: master
+    # lt-document-service-api: master 
+    # pp-lt-program-web: SP-17573
+
+  concurrent:
+    # pp-iptb-service: master
+    pp-lt-aims-web: release-5.3.32
+    pp-lt-aims-service-api: release-5.3.32
+    pp-customer-service: release-8.113
+    lt-doc-service-api: release-5.3.32
+    pp-wqs-service: release-1.0.97
+    pp-public-api: release-1.2.216
+    pp-back-office: release-8.113
+    pp-psi-web: release-8.113
+    pp-node-aca: release-1.12.70

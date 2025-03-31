@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="UTF-8"><title>Single invoice</title>
+<style type="text/css">
+    body {color: #000000; font-size: 10pt; font-family: &quot;SansSerif&quot;, sans-serif; }
+li { list-style: none;  margin: 0; }
+p { margin: 0; }
+
+span.l { color: red; font-weight: bold; }
+
+a.mapnode:link,
+a.mapnode:visited,
+a.mapnode:active,
+a.mapnode:hover {
+    text-decoration: none; color: black;
+}
+a.mapnode:hover { background: #eeeee0; }
+
+</style>
+</head>
+<body>
+<p><span style="font-size: 18pt; ">Single invoice</span><ul>
+<li>Update the naming “Your QIMA contact”
+    <p>
+      <span style="font-weight: bold;">Note: Apply to all templates(How many template?)</span>
+    </p>
+  <ul>
+<li>Step:Generate Invoice
+    <p>
+      existence data&amp;newly data
+    </p>
+  <ul>
+<li>Ex:<ul>
+<li>Display new field<ul>
+<li>Your QIMA contact.png</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li><li>New field:'Lab Location Name'
+    <p>
+      18361:Note: Apply to all templates
+    </p>
+  <ul>
+<li>Step:Entrance:Lab Management=>Office=>Edit</li><li>Step:Entrance:Lab Management=>Office=>Add</li><li>Ex<ul>
+<li>Between 'Legal Name' & 'Tele No' add 'Lab Location Name' filed<ul>
+<li>Lab Location.png</li></ul>
+</li><li>The input box length should aline with 'Legal Name'</li><li>The input box can input any character:asdSDF123!@#中文支持</li><li>The input length limit 200：<ul>
+<li>>200 can't save of other warning</li><li>can be saved while <= 200</li></ul>
+</li><li>Mandatory validation<ul>
+<li>save without input will pop warning</li></ul>
+</li><li>Location filed updated successful<ul>
+<li>The invoice should display newly info</li></ul>
+</li></ul>
+</li></ul>
+</li><li>Add a field named “Tel” in office page
+    <p>
+      Note: Apply to all templates
+    </p>
+  <ul>
+<li>
+    <p>
+      Entrance:Lab Management=&gt;Office=&gt;Edit
+    </p>
+  </li><li>
+    <p>
+      Entrance:Lab Management=&gt;Office=&gt;Add
+    </p>
+  </li><li>Ex:<ul>
+<li>Mandatory validation<ul>
+<li>save without input will pop warning</li></ul>
+</li><li>Only digit<ul>
+<li>Input other type will give a warning</li></ul>
+</li><li>Length limit?</li><li>display on invoice top area under 'Lab location'<ul>
+<li>Tel.png</li></ul>
+</li></ul>
+</li></ul>
+</li><li>Remove 'Attendee' field
+    <p>
+      Note: Apply to all templates
+    </p>
+    <p>
+      The input entrance?
+    </p>
+  <ul>
+<li>Generate Invoice<ul>
+<li>Ex:<ul>
+<li>Even the order which this field has data but the invoice should not, In client detail<ul>
+<li>Attendee field remove.png</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li><li>Update fields name
+    <p>
+      Note: Apply to all templates
+    </p>
+  <ul>
+<li>Generate Invoice<ul>
+<li>Ex:<ul>
+<li>“Accounting” to “Billing”<ul>
+<li>  “Billing” field instead “Accounting”<ul>
+<li>Billing instead.png</li></ul>
+</li></ul>
+</li><li> “Exchange rates” to “Exchange rate(s)”<ul>
+<li>Exchange rates update.png</li></ul>
+</li><li>Other detail' section fields updated<ul>
+<li>Ex:Other detail section should contain below fields and beauty UI<ul>
+<li>Report No.&#10;&#10;Service date&#10;&#10;Sample description&#10;&#10;SKU No.&#10;&#10;Client PO No.&#10;&#10;Style No.<ul>
+<li>Other Detail section.png</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li><li>Add 'Turnaround Time' section<ul>
+<li>
+    <p>
+      Generate Invoice
+    </p>
+  <ul>
+<li>Ex:<ul>
+<li>
+    <p>
+      Add turnaround section after other detail section
+    </p>
+  </li><li>The data should come from order test assignments</li><li>display rule : * + days</li></ul>
+</li></ul>
+</li></ul>
+</li><li>Header:Description<ul>
+<li>
+    <p>
+      Generate Invoice
+    </p>
+  <ul>
+<li>Ex:<ul>
+<li>
+    <p>
+      'Description' section update to 'Test Description'
+    </p>
+  </li><li>The table  of test description section should contain below columns<ul>
+<li><p>
+    <ul>
+      <li>
+        <p>
+          Test description
+        </p>
+      </li>
+    </ul>
+  </li><li><p>
+    <ul>
+      <li>
+        <p>
+          Quantity
+        </p>
+      </li>
+    </ul>
+  </li><li><p>
+    <ul>
+      <li>
+        <p>
+          Special instruction → Align the logic with this ticket: <a data-inline-card="" href="https://qima.atlassian.net/browse/SP-18016" data-card-data="">https://qima.atlassian.net/browse/SP-18016</a>
+        </p>
+      </li>
+    </ul>
+  </a>
+</li><li><p>
+    <ul>
+      <li>
+        <p>
+          Unit price (USD)
+        </p>
+      </li>
+    </ul>
+  </li><li><p>
+    <ul>
+      <li>
+        <p>
+          Amount (USD)
+        </p>
+      </li>
+    </ul>
+  </li></ul>
+</li><li>“Test description” is left-align and the others are horizon-align</li></ul>
+</li></ul>
+</li></ul>
+</li><li>Other header checking<ul>
+<li>
+    <p>
+      Generate Invoice
+    </p>
+  <ul>
+<li>Ex:<ul>
+<li>For the header, all of them are vertical-align</li><li>Note: Apply to all templates</li></ul>
+</li></ul>
+</li></ul>
+</li><li>Continue ->'<ul>
+<li>
+    <p>
+      Generate Invoice
+    </p>
+  <ul>
+<li>Ex:<ul>
+<li>Multiple page scenario will display<ul>
+<li>Continue button.png</li></ul>
+</li><li>Single page scenario?</li><li>UI checking</li></ul>
+</li></ul>
+</li></ul>
+</li><li>Remove sentence<ul>
+<li>
+    <p>
+      Generate Invoice
+    </p>
+  <ul>
+<li>Ex:<ul>
+<li>Remove footer fixed words:This is a computer-generated document. No signature is required.<ul>
+<li>fixed words.png</li></ul>
+</li><li>Remove words which under 'Total amount' fields:Say four thousand six hundred sixty eight point eighty three HKD only<ul>
+<li>Remove words.png</li></ul>
+</li><li>Note: Apply to all templates</li></ul>
+</li></ul>
+</li></ul>
+</li><li>Total amount section<ul>
+<li>
+    <p>
+      Generate Invoice
+    </p>
+  <ul>
+<li>Ex:<ul>
+<li>Surcharge<ul>
+<li>no need to show this line</li></ul>
+</li><li>No surcharge<ul>
+<li>If there is a express booking fee, then need to show it “3 Day Express (20% Surcharge)” and its related amount
+    <p>
+      express fee come from?
+    </p>
+  </li></ul>
+</li><li>“Total amount to be paid”: Follow up on the new design<ul>
+<li>total amount UI.png</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</body>
+</html>

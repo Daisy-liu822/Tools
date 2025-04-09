@@ -134,12 +134,12 @@ class JenkinsDeployer:
                 
                 service_end_time = time.time()
                 duration = round(service_end_time - service_start_time, 2)
-                self.logger.info(f"===== 服务 {service} 部署{'成功' if success else '失败'} =====")
+                self.logger.info(f"===== 服务 {service} 部署：{branch}{'成功' if success else '失败'} =====")
                 self.logger.info(f"耗时: {duration} 秒")
                 
         finally:
             total_duration = round(time.time() - start_time, 2)
-            self.logger.info(f"部署完成，总耗时: {total_duration} 秒")
+            self.logger.info(f"部署结束，总耗时: {total_duration} 秒")
             if len(services_branches) > 0:
                 try:
                     self.driver.quit()
@@ -154,31 +154,14 @@ class JenkinsDeployer:
         urllib3.disable_warnings()
         logging.getLogger("urllib3").setLevel(logging.ERROR)
         
-        driver = webdriver.Edge(options=self._get_browser_options())
-        driver.set_page_load_timeout(30)
+        # 构建所有服务的master分支字典
+        services_to_deploy = {
+            service: "master" for service in self.services 
+            if service not in self.skip_services
+        }
         
-        try:
-            results = {}
-            for service in self.services:
-                try:
-                    success = self._execute_deploy(driver, service, "master")
-                    results[service] = success
-                    self.logger.info(f"服务 {service} 部署{'成功' if success else '失败'}")
-                except Exception as e:
-                    self.logger.error(f"部署服务 {service} 时发生错误: {str(e)}")
-                    results[service] = False
-        finally:
-            # 确保资源释放
-            try:
-                driver.quit()
-            except Exception:
-                pass
-            try:
-                driver.service.stop()
-            except Exception:
-                pass
-            
-        return results
+        # 使用deploy_concurrent进行部署
+        return self.deploy_concurrent(services_to_deploy)
     
     def _wait_for_element(self, locator, timeout=10, retries=3) -> WebElement:
         """等待元素出现，带重试机制"""
@@ -194,7 +177,7 @@ class JenkinsDeployer:
                 self.logger.warning(f"等待元素 {locator} 失败，重试第 {attempt + 1} 次")
                 time.sleep(1)
 
-    def _check_build_result(self, driver=None, max_retries=30):
+    def _check_build_result(self, driver=None, max_retries=60):
         """检查构建结果"""
         retry_interval = 10
         driver = driver or self.driver
@@ -257,6 +240,9 @@ class JenkinsDeployer:
         urllib3.disable_warnings()
         logging.getLogger("urllib3").setLevel(logging.ERROR)
         
+        service_start_time = time.time()
+        self.logger.info(f"===== 开始部署服务: {services_branches} =====")
+        self.logger.info(f"分支: {services_branches}")
         results = {}
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
             futures = []
@@ -324,11 +310,12 @@ class JenkinsDeployer:
         """执行单个服务的部署"""
         try:
             url = self.it_dependency_url if service == 'it-dependency' else self.base_url.format(service)
+            self.logger.info(f"访问构建页面: {url}")
             driver.get(url)
-            
+            self.logger.info(f"填写分支信息: {branch}")
             # 填写分支并构建
             self._fill_branch_and_build(driver, branch)
-            
+            self.logger.info(f"访问构建页面: {url}")
             # 检查构建结果
             return self._check_build_result(driver)
         except Exception as e:
@@ -362,6 +349,3 @@ if __name__ == "__main__":
     # # 并发部署
     # results = deployer.deploy_concurrent(services_to_deploy)
     # print(f"并发部署结果: {results}")
-
-    # # 2.部署所有服务到 master 分支
-    # deployer.deploy_all_master()

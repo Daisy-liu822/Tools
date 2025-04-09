@@ -11,7 +11,7 @@ def main():
         return
         
     deployer = JenkinsDeployer(
-        max_workers=default_config.get('max_workers', 10),
+        max_workers=default_config.get('max_workers', 20),
         build_timeout=default_config.get('build_timeout', 1800),
         headless=default_config.get('headless', True)
     )

@@ -28,25 +28,30 @@ skip_services:
 services:
   sequential:
     # pp-iptb-service: master
-    it-dependency: SP-20894
-    # pp-lt-aims-web: SP-21923
-    # pp-lt-aims-service: master
+    # it-dependency: SP-22172
+    pp-lt-aims-web: release-5.3.33
+    # pp-lt-aims-service-api: SP-17573
     # lt-document-service-api: master 
-    # pp-lt-program-web: SP-17573
+    # pp-lt-program-web: release-5.3.33
+    # pp-node-aca: SP-17573_reportCompany_reportCompanyAddress
 
   concurrent:
-    # pp-iptb-service: master
-    # pp-lt-aims-web: release-5.3.32
-    # pp-lt-aims-service-api: release-5.3.32
+    # pp-iptb-service: DEVELOPMENT
+    # it-dependency: release-5.3.33
+    pp-lt-aims-web: release-5.3.33
+    # pp-lt-aims-service-api: release-5.3.33
+    # pp-lt-program-web: release-5.3.33
     # pp-customer-service: release-8.113
     # lt-doc-service-api: release-5.3.32
-    # pp-wqs-service: release-1.0.97
     # pp-public-api: release-1.2.216
-    # pp-back-office: release-8.113
-    # pp-psi-web: release-8.113
-    # pp-node-aca: release-1.12.70
-    pp-sso-management: master
-    pp-sso-server: master
-    pp-sample-web: master
-    pp-wqs-common: master
-    pp-report-service: master
+    # pp-back-office: release-8.114
+    # pp-psi-web: release-8.115
+    # pp-node-aca: release-1.12.71
+    # pp-public-api: release-1.2.217
+    # pp-sso-management: master
+    # pp-sso-server: master
+    # pp-sample-web: master
+    # pp-wqs-common: master
+    # pp-wqs-service: release-1.0.97
+    # pp-report-service: master
+    # pp-node-cia-new: release-2.2.3

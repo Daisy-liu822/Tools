@@ -9,9 +9,13 @@ def main():
     if not services_to_deploy:
         print("没有需要部署的服务")
         return
+    
+    # 动态设置max_workers为concurrent服务数量    
+    max_workers = len(services_to_deploy)
         
     deployer = JenkinsDeployer(
-        max_workers=default_config.get('max_workers', 20),
+        # max_workers=default_config.get('max_workers', 10),
+        max_workers=max_workers,  # 使用动态计算的max_workers
         build_timeout=default_config.get('build_timeout', 1800),
         headless=default_config.get('headless', True)
     )

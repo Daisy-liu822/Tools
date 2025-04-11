@@ -1,0 +1,31 @@
+default:
+  headless: true
+  max_workers: 3
+  build_timeout: 1800
+skip_services:
+- pp-qrcode-cloud
+- pp-claim-cloud
+- pp-dynamic-order-cloud
+- pp-exchange-console
+- pp-e-signature-web
+- pp-exchange-console
+- pp-factory-service
+- pp-file-service
+- pp-gi-service
+- pp-gi-web
+- pp-ip-service
+- pp-ip-template-service
+- pp-ip-template-web
+- pp-lt-external-service-api
+- pp-node-aa-pdf-generator
+- pp-parameter-service
+- pp-parameter-web
+services:
+  sequential:
+    # pp-lt-aims-web: release-5.3.33
+    # pp-lt-doc-services-api: SP-21792
+    pp-lt-aims-service-api: SP-22693
+  concurrent:
+    pp-lt-aims-web: SP-21792
+    pp-lt-aims-service-api: SP-21792
+    pp-lt-doc-services-api: SP-21792

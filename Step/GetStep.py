@@ -1,4 +1,4 @@
-import schedule
+# import schedule
 import time
 import random
 import requests
@@ -7,8 +7,8 @@ import logging
 import threading
 
 # 配置部分
-ACCOUNT = "136982316@qq.com"
-PASSWORD = "liuxu520"
+ACCOUNT = "1369823165@qq.com"
+PASSWORD = "liuxu123"
 MAX_RETRIES = 3  # 最大重试次数
 RETRY_DELAY = 5  # 重试延迟（秒）
 STEP_MIN, STEP_MAX = 23000, 25000

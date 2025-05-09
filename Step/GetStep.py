@@ -59,7 +59,7 @@ def job():
 # logging.info("输入 'manual' 手动触发任务，输入 'exit' 退出程序。")
 
 
-# # 手动触发机制
+# # 手动触发机制 123
 # def manual_trigger():
 #     while True:
 #         user_input = input().strip().lower()

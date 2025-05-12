@@ -302,11 +302,11 @@ class JenkinsDeployer:
                 
                 if "Success" in title:
                     total_time = round(time.time() - start_time, 2)
-                    self.logger.info(f"构建成功! 总耗时: {total_time}秒")
+                    self.logger.info(f"{service_name} 构建成功! 总耗时: {total_time}秒")
                     return True
                 elif any(status in title for status in ["Failure", "Aborted"]):
                     total_time = round(time.time() - start_time, 2)
-                    self.logger.error(f"构建失败! 总耗时: {total_time}秒")
+                    self.logger.error(f"{service_name} 构建失败! 总耗时: {total_time}秒")
                     return False
                     
             except StaleElementReferenceException:

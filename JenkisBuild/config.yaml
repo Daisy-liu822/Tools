@@ -22,10 +22,16 @@ skip_services:
 - pp-parameter-web
 services:
   sequential:
-    # pp-lt-aims-web: release-5.3.33
-    # pp-lt-doc-services-api: SP-21792
-    pp-lt-aims-service-api: SP-22693
+    pp-lt-aims-web: SP-21974-Epic
+    # pp-lt-aims-service-api: SP-22259
+    # pp-lt-program-web: SP-23094
+    # pp-node-aca: SP-22854_cancel_reason
   concurrent:
-    pp-lt-aims-web: SP-21792
-    pp-lt-aims-service-api: SP-21792
-    pp-lt-doc-services-api: SP-21792
+    it-dependency: SP-21974-Epic
+    pp-lt-aims-web: SP-21974-Epic
+    pp-lt-aims-service-api: SP-21974-Epic
+    pp-public-api: SP-21974-Epic
+    pp-node-aca: SP-22854_cancel_reason
+    # pp-final-report-service: release-5.3.37
+    # pp-lt-program-web: SP-23094
+    # pp-lt-doc-services-api: release-5.3.37

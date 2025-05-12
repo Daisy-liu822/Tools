@@ -1,4 +1,4 @@
-import schedule
+# import schedule
 import time
 import random
 import requests
@@ -7,8 +7,8 @@ import logging
 import threading
 
 # 配置部分
-ACCOUNT = "136982316@qq.com"
-PASSWORD = "liuxu520"
+ACCOUNT = "1369823165@qq.com"
+PASSWORD = "liuxu123"
 MAX_RETRIES = 3  # 最大重试次数
 RETRY_DELAY = 5  # 重试延迟（秒）
 STEP_MIN, STEP_MAX = 23000, 25000
@@ -59,7 +59,7 @@ def job():
 # logging.info("输入 'manual' 手动触发任务，输入 'exit' 退出程序。")
 
 
-# # 手动触发机制
+# # 手动触发机制 123
 # def manual_trigger():
 #     while True:
 #         user_input = input().strip().lower()

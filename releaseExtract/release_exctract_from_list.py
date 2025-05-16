@@ -936,11 +936,6 @@ def main():
         print("错误: 未获取到HTML内容，无法提取服务名称")
         return
     
-    # 如果需要保存HTML内容
-    if args.save_html:
-        with open(DEBUG_HTML_FILE, 'w', encoding='utf-8') as f:
-            f.write(html_content)
-        print(f"已将HTML内容保存到 {DEBUG_HTML_FILE}")
     
     # 启用调试模式时分析HTML内容
     if args.debug:

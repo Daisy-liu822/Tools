@@ -1,0 +1,696 @@
+<html class="webkit chrome"><head>
+	<title>SP Tickets QA Tested PP (QIMA)</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"]="\"\"";
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-rest:curl.cross-origin-resources"]="false";
+WRM._unparsedData["jira.webresources:feature-flags.feature-flag-data"]="{\"enabled-feature-keys\":[\"jira.plugin.devstatus.automatic.transitioning\",\"nps.survey.inline.dialog\",\"jira.plugin.devstatus.phasefour.enabled\",\"jira.export.excel.enabled\",\"com.atlassian.jira.projects.issuenavigator.cachefix\",\"jira.plugin.devstatus.bamboo.enabled\",\"jira.administration.workflow.validation\",\"re-enable.group.endpoints.jra-60287\",\"atlassian.connect.dhe.disabled.awl-gebsun.rhcloud.com\",\"jira.issue.status.lozenge\",\"unified.usermanagement\",\"com.atlassian.jira.projects.issuenavigator\",\"jira.issue.search.jql.indexprimary.enabled\",\"jira.plugin.devstatus.phasetwo.enabled\",\"jira.plugin.fisheye.tab.enabled\",\"jira.issue.search.api.indexprimary.enabled\",\"atlassian.aui.raphael.disabled\",\"com.atlassian.jira.config.CoreFeatures.PERMISSIONS_MANAGED_BY_UM\",\"jira.projectconfig.issuetypes.sidebar\",\"jira.plugin.projects.version.tab.feedback.banner\",\"jira.event.mau.logging.disable\",\"com.atlassian.portfolio.classicPlans.sunset\",\"com.atlassian.rm.portfolio.vertigo.issueloading.Database\",\"atlassian.connect.dhe.disabled.aip-flyingagile.rhcloud.com\",\"com.atlassian.portfolio.integrations.ClassicPlans.disabled\",\"connect.authentication.oauth2.impersonation\",\"jira.bamboo.legacy.force\",\"jira.plugin.devstatus.background.refresh.enabled\",\"ka.SIMPLE_ISSUE_MENUS\"],\"feature-flag-states\":{\"com.atlassian.jira.plugins.mail.internal\":false,\"com.atlassian.jira.feature.flag.for.TestFeatureFlagResource\":false,\"jira.feature.rest.single.step.avatar.upload\":true,\"jira.ondemand.maintain.trusted.apps\":true}}";
+WRM._unparsedData["com.atlassian.jira.jira-client-analytics-plugin:analytics-context-provider.client-analytic-descriptors"]="{\"analyticsResource\":{\"jira-core\":{\"events\":{\"issue.comment.added\":{\"trigger\":\"click #issue-comment-add-submit\",\"properties\":{\"comment-length\":\"value.length #issue-comment-add #comment\"}}}}},\"tenantId\":\"49461bac-4850-486b-b7b7-2425cac42589\",\"orgId\":\"b5d56ffc-f04c-4cd6-820a-ebef8ec0ae29\",\"aid\":\"712020:a9803e88-8da8-4d7c-b704-afc993ae924e\",\"env\":\"prod\"}";
+WRM._unparsedData["jira.webresources:default-comment-security-level.DefaultCommentSecurityLevelHelpLink"]="{\"extraClasses\":\"default-comment-level-help\",\"title\":\"Commenting on an Issue\",\"url\":\"https://confluence.atlassian.com/display/JIRASOFTWARECLOUD/Editing+and+collaborating+on+issues#Editingandcollaboratingonissues-addcommentsCommentingonissues\",\"isLocal\":false}";
+WRM._unparsedData["jira.webresources:key-commands.shortcuts"]="[{\"moduleKey\":\"go-to-dashboard-kb-shortcut\",\"keys\":[[\"g\",\"d\"]],\"context\":\"global\",\"op\":\"goTo\",\"param\":\"/secure/Dashboard.jspa\"},{\"moduleKey\":\"greenhopper-gh-shortcut\",\"keys\":[[\"g\",\"h\"]],\"context\":\"global\",\"op\":\"execute\",\"param\":\"gh.app.globalkeyboardshortcuts.goToAgile();\"},{\"moduleKey\":\"browse-project-kb-shortcut\",\"keys\":[[\"g\",\"p\"]],\"context\":\"global\",\"op\":\"execute\",\"param\":\"var elem = jQuery(\\\"#browse_link\\\");\\n                if (elem.length \u003e 0) {\\n                    window.location.href = elem.attr(\\\"href\\\");\\n                }\"},{\"moduleKey\":\"greenhopper-agile-shortcut\",\"keys\":[[\"g\",\"a\"]],\"context\":\"global\",\"op\":\"execute\",\"param\":\"gh.app.globalkeyboardshortcuts.goToAgile();\"},{\"moduleKey\":\"issue-navigator-kb-shortcut\",\"keys\":[[\"g\",\"i\"]],\"context\":\"global\",\"op\":\"execute\",\"param\":\"var elem = jQuery(\\\"#find_link\\\");\\n                if (elem.length \u003e 0) {\\n                    window.location.href = elem.attr(\\\"href\\\");\\n                }\"},{\"moduleKey\":\"admin.quicksearch.dialog.shortcut\",\"keys\":[[\"g\",\"g\"]],\"context\":\"global\",\"op\":\"execute\",\"param\":\"JIRA.Shifter.show();\"},{\"moduleKey\":\"quicksearch\",\"keys\":[[\"/\"]],\"context\":\"global\",\"op\":\"moveToAndFocus\",\"param\":\"#quickSearchInput, #admin-quick-nav-field\"},{\"moduleKey\":\"create.issue\",\"keys\":[[\"c\"]],\"context\":\"global\",\"op\":\"moveToAndClick\",\"param\":\"#header .create-issue\"},{\"moduleKey\":\"shifter\",\"keys\":[[\".\"]],\"context\":\"global\",\"op\":\"execute\",\"param\":\"var isDotShortcut = true;\\n                JIRA.Shifter.show(isDotShortcut);\"},{\"moduleKey\":\"help\",\"keys\":[[\"?\"]],\"context\":\"global\",\"op\":\"click\",\"param\":\"#keyshortscuthelp\"}]";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+<link type="text/css" rel="stylesheet" href="//d1s8d7x72hdg8f.cloudfront.net/qima.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-CDN/xghl7j/b/9/5c7c8772722c4884e3a3f4703f94b4a4/_/download/contextbatch/css/_super/batch.css?relative-url=true" data-wrm-key="_super" data-wrm-batch-type="context" media="all">
+<link type="text/css" rel="stylesheet" href="//d1s8d7x72hdg8f.cloudfront.net/qima.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-CDN/xghl7j/b/9/4de2dcc5e2995588e399eb4b2702c66c/_/download/batch/com.atlassian.auiplugin:aui-labels/com.atlassian.auiplugin:aui-labels.css?relative-url=true" data-wrm-key="com.atlassian.auiplugin:aui-labels" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="//d1s8d7x72hdg8f.cloudfront.net/qima.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-CDN/xghl7j/b/9/6e8a27b8a46c975cc69594265b3ea8d4/_/download/batch/jira.webresources:theme-adg3/jira.webresources:theme-adg3.css?relative-url=true" data-wrm-key="jira.webresources:theme-adg3" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="//d1s8d7x72hdg8f.cloudfront.net/qima.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-CDN/xghl7j/b/9/2655354dc9326775b8d881660275986e/_/download/batch/jira.webresources:global-static/jira.webresources:global-static.css?relative-url=true" data-wrm-key="jira.webresources:global-static" data-wrm-batch-type="resource" media="all">
+<script type="text/javascript" src="//d1s8d7x72hdg8f.cloudfront.net/qima.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-CDN/xghl7j/b/9/6c0b43ea7e6061103acbbe9130dae6b0/_/download/contextbatch/js/_super/batch.js?locale=en-US" data-wrm-key="_super" data-wrm-batch-type="context" data-initially-rendered=""></script><style type="text/css"></style><style type="text/css"></style>
+<script type="text/javascript" src="//d1s8d7x72hdg8f.cloudfront.net/qima.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-CDN/xghl7j/b/9/ea7403159b8d960b5cd6cd71e1312f59/_/download/batch/jira.webresources:global-static/jira.webresources:global-static.js" data-wrm-key="jira.webresources:global-static" data-wrm-batch-type="resource" data-initially-rendered=""></script>
+<script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["_wrmBatchContents"]="{\"js\":{\"_super\":[\"jira.webresources:es6-promise\",\"jira.webresources:promise-polyfill\",\"jira.webresources:usertiming-polyfill\",\"jira.webresources:almond\",\"jira.webresources:almond-analytics\",\"com.atlassian.auiplugin:aui-reset\",\"com.atlassian.auiplugin:aui-page-typography\",\"com.atlassian.auiplugin:aui-avatars\",\"com.atlassian.auiplugin:aui-page-layout\",\"com.atlassian.plugins.atlassian-plugins-webresource-plugin:data\",\"com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path\",\"com.atlassian.auiplugin:ajs-contextpath\",\"com.atlassian.plugins.jquery:jquery-1.7.2\",\"com.atlassian.plugins.jquery:jquery\",\"com.atlassian.auiplugin:jquery-lib\",\"com.atlassian.auiplugin:jquery-compatibility\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-polyfills-console\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-jquery\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-create-element\",\"com.atlassian.auiplugin:internal-object-assign-4.0.1-index\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-globalize\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-deprecation\",\"com.atlassian.auiplugin:aui-deprecation\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-polyfills-custom-event\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-constants\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-version\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-globals\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-data\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-mutation-observer\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-utils\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-registry\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-lifecycle\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-fix-ie-innerhtml\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-document-observer\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-skate\",\"com.atlassian.auiplugin:internal-tether-0.6.5-tether\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-version\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-prevent-default\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-stop-event\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-index-of\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-contains\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-include\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-toggle-class-name\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-set-visible\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-set-current\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-is-visible\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-is-clipped\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-params\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-populate-parameters\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-log\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-to-init\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-firebug\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-clone\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-alphanum\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-on-text-resize\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-unbind-text-resize\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-escape\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-escape-html\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-filter-by-search\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-debounce\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-unique-id\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-add-id\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-forms\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-setup\",\"com.atlassian.auiplugin:deprecated-legacy-ajs-file\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-format\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-animation\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-feature-flags\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-blanket\",\"com.atlassian.auiplugin:aui-core\",\"com.atlassian.auiplugin:internal-basic-css\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-jquery-plugins-jquery-aop\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-drop-down\",\"com.atlassian.auiplugin:dropdown\",\"com.atlassian.auiplugin:icons\",\"com.atlassian.auiplugin:table\",\"com.atlassian.auiplugin:internal-form-css\",\"com.atlassian.auiplugin:internal-message-css\",\"com.atlassian.auiplugin:ajs-gadgets-base\",\"com.atlassian.auiplugin:toolbar\",\"com.atlassian.auiplugin:aui-buttons\",\"com.atlassian.auiplugin:aui-toolbar2\",\"com.atlassian.soy.soy-template-plugin:soy-deps\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-widget\",\"com.atlassian.auiplugin:internal-aui-widget\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-i18n-aui\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-i18n\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-skate\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-navigation\",\"com.atlassian.auiplugin:aui-navigation\",\"com.atlassian.auiplugin:aui-experimental-iconfont\",\"com.atlassian.auiplugin:aui-header-unresponsive\",\"com.atlassian.auiplugin:internal-skatejs-template-html-0.0.0-dist-template-html\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-header-create-header\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-header\",\"com.atlassian.auiplugin:aui-header\",\"com.atlassian.auiplugin:aui-page-header\",\"com.atlassian.auiplugin:aui-page-suite\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-focus-manager\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-key-code\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-layer\",\"com.atlassian.auiplugin:aui-feature-flags\",\"com.atlassian.auiplugin:aui-focus-manager\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-layer-manager\",\"com.atlassian.auiplugin:keycode\",\"com.atlassian.auiplugin:aui-layer-manager\",\"com.atlassian.auiplugin:layer\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-alignment\",\"com.atlassian.auiplugin:aui-alignment\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-browser\",\"com.atlassian.auiplugin:internal-aui-browser\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-state\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-dropdown2\",\"com.atlassian.auiplugin:aui-dropdown2\",\"com.atlassian.auiplugin:internal-fancy-file-input-2.0.1-dist-fancy-file-input\",\"com.atlassian.auiplugin:internal-src-js-aui-fancy-file-input\",\"com.atlassian.auiplugin:fancy-file-input\",\"com.atlassian.auiplugin:hotkeys\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-event\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-dialog\",\"com.atlassian.auiplugin:dialog\",\"com.atlassian.auiplugin:internal-css.escape-1.5.0-css-escape\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-inline-dialog\",\"com.atlassian.auiplugin:internal-inline-dialog-common\",\"com.atlassian.auiplugin:inline-dialog\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-template\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-messages\",\"com.atlassian.auiplugin:message\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-tabs\",\"com.atlassian.auiplugin:tabs\",\"com.atlassian.auiplugin:jquery-ui-core-1.8.24-patched\",\"com.atlassian.auiplugin:jquery-ui-core\",\"com.atlassian.auiplugin:internal-jquery-ui-partial\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-jquery-jquery-hotkeys\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-jquery-jquery-moveto\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-underscorejs-underscore\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-underscore\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-when-i-type\",\"com.atlassian.auiplugin:internal-keyboardshortcuts\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-cookie\",\"com.atlassian.auiplugin:cookie\",\"com.atlassian.auiplugin:template\",\"com.atlassian.auiplugin:event\",\"com.atlassian.auiplugin:internal-ajs-no-context-path\",\"com.atlassian.auiplugin:ajs\",\"com.atlassian.auiplugin:jquery-ui\",\"com.atlassian.plugin.jslibs:jquery.textoverflow-0.7.4\",\"com.atlassian.plugin.jslibs:jquery.pjax-2011.07.10\",\"com.atlassian.plugin.jslibs:jquery.lazyload-1.8.0\",\"com.atlassian.plugin.jslibs:jquery.flot-0.7\",\"com.atlassian.plugin.jslibs:jquery.effects-1.8rc3\",\"com.atlassian.plugin.jslibs:jquery.dragtable-2.0.4\",\"com.atlassian.plugin.jslibs:jquery.serializeobject-0.2\",\"com.atlassian.plugin.jslibs:jquery.scrollintoview-1.8\",\"jira.webresources:jquery\",\"jira.webresources:aui-core-amd-shim\",\"com.atlassian.auiplugin:aui-badge\",\"com.atlassian.auiplugin:aui-lozenge\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-spin-spin\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-jquery-jquery-spin\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-spin\",\"com.atlassian.auiplugin:aui-spinner\",\"com.atlassian.auiplugin:aui-experimental-spinner\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-amdify\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-flag\",\"com.atlassian.auiplugin:aui-flag\",\"com.atlassian.plugins.atlassian-plugins-webresource-rest:curl\",\"com.atlassian.plugins.atlassian-plugins-webresource-rest:require-handler-v2\",\"com.atlassian.plugins.atlassian-plugins-webresource-rest:web-resource-manager\",\"com.atlassian.plugin.jslibs:skate-0.12.6\",\"jira.webresources:skate\",\"jira.webresources:icons\",\"jira.webresources:jira-logger\",\"jira.webresources:deprecator\",\"jira.webresources:legacy-namespacing\",\"com.atlassian.auiplugin:ajs-underscorejs\",\"jira.webresources:ajs-underscorejs-amd-shim\",\"jira.webresources:jira-metadata\",\"jira.webresources:aui-extensions\",\"jira.webresources:feature-flags\",\"jira.webresources:jira-events\",\"jira.webresources:jira-formatter\",\"jira.webresources:browser-properties\",\"jira.webresources:top-same-origin-window\",\"jira.webresources:util-lite\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-backbone-backbone\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-backbone\",\"com.atlassian.auiplugin:ajs-backbone\",\"jira.webresources:ajs-backbone-amd-shim\",\"jira.webresources:number-formatter\",\"jira.webresources:util\",\"jira.webresources:content-retrievers\",\"jira.webresources:list-styles\",\"jira.webresources:inline-layer\",\"jira.webresources:list\",\"jira.webresources:dropdown\",\"jira.webresources:issue-table-adg3\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-jquery-jquery-tipsy\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-tipsy\",\"com.atlassian.auiplugin:aui-tipsy\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-tooltip\",\"com.atlassian.auiplugin:aui-tooltips\",\"com.atlassian.auiplugin:aui-experimental-tooltips\",\"com.atlassian.plugins.issue-status-plugin:issue-status-resources\",\"jira.webresources:issue-statuses\",\"jira.webresources:issue-table\",\"jira.webresources:select-model\",\"jira.webresources:general-configuration\",\"com.atlassian.auiplugin:aui-experimental-soy-templates\",\"jira.webresources:js-soy-templates\",\"jira.webresources:page-loading-indicator\",\"jira.webresources:messages\",\"jira.webresources:jira-dialog-core\",\"com.atlassian.jira.jira-issue-nav-plugin:issues-api\",\"com.atlassian.jira.jira-issue-nav-plugin:issuenav-legacy\",\"jira.webresources:jira-issuenavigator\",\"jira.webresources:jira-dialog-config\",\"jira.webresources:set-focus\",\"jira.webresources:select-pickers\",\"jira.webresources:jira-analytics-amd\",\"jira.webresources:trigger-custom-event\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-web-client-library\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-context-provider\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-events-transformers\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-web-client\",\"jira.webresources:shifter\",\"com.atlassian.jira.jira-npmbridge-plugin:atlassian-spa-iframe-amd\",\"com.atlassian.plugins.browser.metrics.browser-metrics-plugin:api\",\"com.atlassian.jira.jira-atlaskit-plugin:sidebar\",\"com.atlassian.jira.jira-atlaskit-plugin:forge\",\"com.atlassian.jira.jira-atlaskit-plugin:container-api\",\"jira.webresources:inline-attach\",\"jira.webresources:dialogs\",\"jira.webresources:default-comment-security-level\",\"jira.webresources:dropdown-select\",\"jira.webresources:user-management\",\"jira.webresources:mentions-base\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-progressive-data-set\",\"com.atlassian.auiplugin:aui-experimental-data-handlers\",\"jira.webresources:data-sets\",\"jira.webresources:mentions-feature\",\"jira.webresources:mentions\",\"jira.webresources:jira-edition\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-banner\",\"com.atlassian.auiplugin:aui-banner\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-trigger\",\"com.atlassian.auiplugin:aui-trigger\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-attributes\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-enforcer\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-inline-dialog2\",\"com.atlassian.auiplugin:aui-inline-dialog2\",\"jira.webresources:keyboard-shortcut-toggle\",\"jira.webresources:assignee-picker\",\"jira.webresources:jira-global\",\"jira.webresources:key-commands\",\"jira.webresources:header\",\"jira.webresources:superbatch-default\",\"_context:_super\"]},\"css\":{\"_super\":[\"jira.webresources:es6-promise\",\"jira.webresources:promise-polyfill\",\"jira.webresources:usertiming-polyfill\",\"jira.webresources:almond\",\"jira.webresources:almond-analytics\",\"com.atlassian.auiplugin:aui-reset\",\"com.atlassian.auiplugin:aui-page-typography\",\"com.atlassian.auiplugin:aui-avatars\",\"com.atlassian.auiplugin:aui-page-layout\",\"com.atlassian.plugins.atlassian-plugins-webresource-plugin:data\",\"com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path\",\"com.atlassian.auiplugin:ajs-contextpath\",\"com.atlassian.plugins.jquery:jquery-1.7.2\",\"com.atlassian.plugins.jquery:jquery\",\"com.atlassian.auiplugin:jquery-lib\",\"com.atlassian.auiplugin:jquery-compatibility\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-polyfills-console\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-jquery\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-create-element\",\"com.atlassian.auiplugin:internal-object-assign-4.0.1-index\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-globalize\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-deprecation\",\"com.atlassian.auiplugin:aui-deprecation\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-polyfills-custom-event\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-constants\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-version\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-globals\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-data\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-mutation-observer\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-utils\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-registry\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-lifecycle\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-fix-ie-innerhtml\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-document-observer\",\"com.atlassian.auiplugin:internal-skatejs-0.13.17-lib-skate\",\"com.atlassian.auiplugin:internal-tether-0.6.5-tether\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-version\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-prevent-default\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-stop-event\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-index-of\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-contains\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-include\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-toggle-class-name\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-set-visible\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-set-current\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-is-visible\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-is-clipped\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-params\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-populate-parameters\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-log\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-to-init\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-firebug\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-clone\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-alphanum\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-on-text-resize\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-unbind-text-resize\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-escape\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-escape-html\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-filter-by-search\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-debounce\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-unique-id\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-add-id\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-forms\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-setup\",\"com.atlassian.auiplugin:deprecated-legacy-ajs-file\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-format\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-animation\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-feature-flags\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-blanket\",\"com.atlassian.auiplugin:aui-core\",\"com.atlassian.auiplugin:internal-basic-css\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-jquery-plugins-jquery-aop\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-drop-down\",\"com.atlassian.auiplugin:dropdown\",\"com.atlassian.auiplugin:icons\",\"com.atlassian.auiplugin:table\",\"com.atlassian.auiplugin:internal-form-css\",\"com.atlassian.auiplugin:internal-message-css\",\"com.atlassian.auiplugin:ajs-gadgets-base\",\"com.atlassian.auiplugin:toolbar\",\"com.atlassian.auiplugin:aui-buttons\",\"com.atlassian.auiplugin:aui-toolbar2\",\"com.atlassian.soy.soy-template-plugin:soy-deps\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-widget\",\"com.atlassian.auiplugin:internal-aui-widget\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-i18n-aui\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-i18n\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-skate\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-navigation\",\"com.atlassian.auiplugin:aui-navigation\",\"com.atlassian.auiplugin:aui-experimental-iconfont\",\"com.atlassian.auiplugin:aui-header-unresponsive\",\"com.atlassian.auiplugin:internal-skatejs-template-html-0.0.0-dist-template-html\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-header-create-header\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-header\",\"com.atlassian.auiplugin:aui-header\",\"com.atlassian.auiplugin:aui-page-header\",\"com.atlassian.auiplugin:aui-page-suite\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-focus-manager\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-key-code\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-layer\",\"com.atlassian.auiplugin:aui-feature-flags\",\"com.atlassian.auiplugin:aui-focus-manager\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-layer-manager\",\"com.atlassian.auiplugin:keycode\",\"com.atlassian.auiplugin:aui-layer-manager\",\"com.atlassian.auiplugin:layer\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-alignment\",\"com.atlassian.auiplugin:aui-alignment\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-browser\",\"com.atlassian.auiplugin:internal-aui-browser\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-state\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-dropdown2\",\"com.atlassian.auiplugin:aui-dropdown2\",\"com.atlassian.auiplugin:internal-fancy-file-input-2.0.1-dist-fancy-file-input\",\"com.atlassian.auiplugin:internal-src-js-aui-fancy-file-input\",\"com.atlassian.auiplugin:fancy-file-input\",\"com.atlassian.auiplugin:hotkeys\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-event\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-dialog\",\"com.atlassian.auiplugin:dialog\",\"com.atlassian.auiplugin:internal-css.escape-1.5.0-css-escape\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-inline-dialog\",\"com.atlassian.auiplugin:internal-inline-dialog-common\",\"com.atlassian.auiplugin:inline-dialog\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-template\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-messages\",\"com.atlassian.auiplugin:message\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-tabs\",\"com.atlassian.auiplugin:tabs\",\"com.atlassian.auiplugin:jquery-ui-core-1.8.24-patched\",\"com.atlassian.auiplugin:jquery-ui-core\",\"com.atlassian.auiplugin:internal-jquery-ui-partial\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-jquery-jquery-hotkeys\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-jquery-jquery-moveto\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-underscorejs-underscore\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-underscore\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-when-i-type\",\"com.atlassian.auiplugin:internal-keyboardshortcuts\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-cookie\",\"com.atlassian.auiplugin:cookie\",\"com.atlassian.auiplugin:template\",\"com.atlassian.auiplugin:event\",\"com.atlassian.auiplugin:internal-ajs-no-context-path\",\"com.atlassian.auiplugin:ajs\",\"com.atlassian.auiplugin:jquery-ui\",\"com.atlassian.plugin.jslibs:jquery.textoverflow-0.7.4\",\"com.atlassian.plugin.jslibs:jquery.pjax-2011.07.10\",\"com.atlassian.plugin.jslibs:jquery.lazyload-1.8.0\",\"com.atlassian.plugin.jslibs:jquery.flot-0.7\",\"com.atlassian.plugin.jslibs:jquery.effects-1.8rc3\",\"com.atlassian.plugin.jslibs:jquery.dragtable-2.0.4\",\"com.atlassian.plugin.jslibs:jquery.serializeobject-0.2\",\"com.atlassian.plugin.jslibs:jquery.scrollintoview-1.8\",\"jira.webresources:jquery\",\"jira.webresources:aui-core-amd-shim\",\"com.atlassian.auiplugin:aui-badge\",\"com.atlassian.auiplugin:aui-lozenge\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-spin-spin\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-jquery-jquery-spin\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-spin\",\"com.atlassian.auiplugin:aui-spinner\",\"com.atlassian.auiplugin:aui-experimental-spinner\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-amdify\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-flag\",\"com.atlassian.auiplugin:aui-flag\",\"com.atlassian.plugins.atlassian-plugins-webresource-rest:curl\",\"com.atlassian.plugins.atlassian-plugins-webresource-rest:require-handler-v2\",\"com.atlassian.plugins.atlassian-plugins-webresource-rest:web-resource-manager\",\"com.atlassian.plugin.jslibs:skate-0.12.6\",\"jira.webresources:skate\",\"jira.webresources:icons\",\"jira.webresources:jira-logger\",\"jira.webresources:deprecator\",\"jira.webresources:legacy-namespacing\",\"com.atlassian.auiplugin:ajs-underscorejs\",\"jira.webresources:ajs-underscorejs-amd-shim\",\"jira.webresources:jira-metadata\",\"jira.webresources:aui-extensions\",\"jira.webresources:feature-flags\",\"jira.webresources:jira-events\",\"jira.webresources:jira-formatter\",\"jira.webresources:browser-properties\",\"jira.webresources:top-same-origin-window\",\"jira.webresources:util-lite\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-backbone-backbone\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-backbone\",\"com.atlassian.auiplugin:ajs-backbone\",\"jira.webresources:ajs-backbone-amd-shim\",\"jira.webresources:number-formatter\",\"jira.webresources:util\",\"jira.webresources:content-retrievers\",\"jira.webresources:list-styles\",\"jira.webresources:inline-layer\",\"jira.webresources:list\",\"jira.webresources:dropdown\",\"jira.webresources:issue-table-adg3\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-vendor-jquery-jquery-tipsy\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-tipsy\",\"com.atlassian.auiplugin:aui-tipsy\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-tooltip\",\"com.atlassian.auiplugin:aui-tooltips\",\"com.atlassian.auiplugin:aui-experimental-tooltips\",\"com.atlassian.plugins.issue-status-plugin:issue-status-resources\",\"jira.webresources:issue-statuses\",\"jira.webresources:issue-table\",\"jira.webresources:select-model\",\"jira.webresources:general-configuration\",\"com.atlassian.auiplugin:aui-experimental-soy-templates\",\"jira.webresources:js-soy-templates\",\"jira.webresources:page-loading-indicator\",\"jira.webresources:messages\",\"jira.webresources:jira-dialog-core\",\"com.atlassian.jira.jira-issue-nav-plugin:issues-api\",\"com.atlassian.jira.jira-issue-nav-plugin:issuenav-legacy\",\"jira.webresources:jira-issuenavigator\",\"jira.webresources:jira-dialog-config\",\"jira.webresources:set-focus\",\"jira.webresources:select-pickers\",\"jira.webresources:jira-analytics-amd\",\"jira.webresources:trigger-custom-event\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-web-client-library\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-context-provider\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-events-transformers\",\"com.atlassian.jira.jira-client-analytics-plugin:analytics-web-client\",\"jira.webresources:shifter\",\"com.atlassian.jira.jira-npmbridge-plugin:atlassian-spa-iframe-amd\",\"com.atlassian.plugins.browser.metrics.browser-metrics-plugin:api\",\"com.atlassian.jira.jira-atlaskit-plugin:sidebar\",\"com.atlassian.jira.jira-atlaskit-plugin:forge\",\"com.atlassian.jira.jira-atlaskit-plugin:container-api\",\"jira.webresources:inline-attach\",\"jira.webresources:dialogs\",\"jira.webresources:default-comment-security-level\",\"jira.webresources:dropdown-select\",\"jira.webresources:user-management\",\"jira.webresources:mentions-base\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-progressive-data-set\",\"com.atlassian.auiplugin:aui-experimental-data-handlers\",\"jira.webresources:data-sets\",\"jira.webresources:mentions-feature\",\"jira.webresources:mentions\",\"jira.webresources:jira-edition\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-banner\",\"com.atlassian.auiplugin:aui-banner\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-trigger\",\"com.atlassian.auiplugin:aui-trigger\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-attributes\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-internal-enforcer\",\"com.atlassian.auiplugin:internal-@atlassian-aui-src-js-aui-inline-dialog2\",\"com.atlassian.auiplugin:aui-inline-dialog2\",\"jira.webresources:keyboard-shortcut-toggle\",\"jira.webresources:assignee-picker\",\"jira.webresources:jira-global\",\"jira.webresources:key-commands\",\"jira.webresources:header\",\"jira.webresources:superbatch-default\",\"_context:_super\"]}}";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+
+<script type="text/javascript" charset="utf-8" src="//d1s8d7x72hdg8f.cloudfront.net/qima.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-CDN/xghl7j/b/9/e031525bdf272830a2ec87d681fdeefd/_/download/contextbatch/js/com.atlassian.jira.plugins.jira-browser-metrics:contrib,-_super/batch.js"></script><script type="text/javascript" charset="utf-8" src="//d1s8d7x72hdg8f.cloudfront.net/qima.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-CDN/xghl7j/b/9/ee6e9427b57c53b495f42a7ef426283c/_/download/contextbatch/js/com.atlassian.plugins.browser.metrics.browser-metrics-plugin:impl,-_super/batch.js"></script></head>
+<body id="jira" class="aui-layout aui-theme-default page-type-printable" data-aui-version="6.0.5">
+    
+<div id="printable-content">
+<div class="result-header">
+    <h3><a href="https://qima.atlassian.net/issues/?filter=20334">SP Tickets QA Tested PP (QIMA)</a></h3>
+            <div class="searcherValue">
+            <label class="fieldLabel" for="fieldJqlQuery">JQL Query:</label>
+            <span id="fieldJqlQuery" class="fieldValue">project = SP
+AND issuetype IN (standardIssueTypes(), subTaskIssueTypes())
+AND status = Done
+AND resolution = "Waiting to Release"
+AND updated &gt;= -100d
+AND "sp team[dropdown]" != Titan
+ORDER BY cf[12628] ASC, Key ASC</span>
+        </div>
+                <div class="searcherValue">
+            <label class="fieldLabel">Sorted by:</label>
+                            SP Team ascending, then
+                            Key ascending
+                    </div>
+                    <div class="results-count">
+            <b>1</b>–<b>25</b> of <b>25</b>
+            as at: <b>17/May/25 1:03 AM</b>
+        </div>
+    </div>
+
+
+
+
+                                        <table id="issuetable" class="aui ">
+                        <thead>
+        <tr class="rowHeader">
+            
+                                                            <th class="colHeaderLink headerrow-issuetype" data-id="issuetype">
+                                                        T
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuekey" data-id="issuekey">
+                                                        Key
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-summary" data-id="summary">
+                                                        Summary
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_12605" data-id="customfield_12605">
+                                                        Affects Project
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_12628" data-id="customfield_12628">
+                                                        SP Team
+                                                    </th>
+                                                                    </tr>
+    </thead>
+    <tbody>
+                    
+
+                <tr id="issuerow144797" rel="144797" data-issuekey="SP-20610" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-20610" href="https://qima.atlassian.net/browse/SP-20610">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11618?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Task" title="Task - A task that needs to be done.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-20610" href="https://qima.atlassian.net/browse/SP-20610">SP-20610</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-20610" href="https://qima.atlassian.net/browse/SP-20610">[Apollo] [2025 Q2] SpringCloud upgrading - route-service-cloud</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>route-service-cloud</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Apollo
+</td>
+                    </tr>
+
+
+                <tr id="issuerow148347" rel="148347" data-issuekey="SP-22226" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-22226" href="https://qima.atlassian.net/browse/SP-22226">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11603?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Bug" title="Bug - A problem which impairs or prevents the functions of the product.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-22226" href="https://qima.atlassian.net/browse/SP-22226">SP-22226</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-22226" href="https://qima.atlassian.net/browse/SP-22226">[LT] Style info photo uploaded with bad layout</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>aims-web</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    X-Men
+</td>
+                    </tr>
+
+
+                <tr id="issuerow149692" rel="149692" data-issuekey="SP-22849" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-22849" href="https://qima.atlassian.net/browse/SP-22849">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11615?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Story" title="Story - A user story. Created by JIRA Software - do not edit or delete.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-22849" href="https://qima.atlassian.net/browse/SP-22849">SP-22849</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-22849" href="https://qima.atlassian.net/browse/SP-22849">[LT][Task] Add configuration in AIMS to control which cancel reasons can be selected by clients.</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>aims-service</span>,			        							<span>aims-web</span>,			        							<span>lt-dependency</span>,			        							<span>Public-API</span>,			        							<span>lt-external-service-cloud</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    X-Men
+</td>
+                    </tr>
+
+
+                <tr id="issuerow150534" rel="150534" data-issuekey="SP-23210" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-23210" href="https://qima.atlassian.net/browse/SP-23210">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11615?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Story" title="Story - A user story. Created by JIRA Software - do not edit or delete.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-23210" href="https://qima.atlassian.net/browse/SP-23210">SP-23210</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-23210" href="https://qima.atlassian.net/browse/SP-23210">[LT][Test] Update cancel reason for LT quotations</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>NA</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    X-Men
+</td>
+                    </tr>
+
+
+                <tr id="issuerow150618" rel="150618" data-issuekey="SP-23235" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-23235" href="https://qima.atlassian.net/browse/SP-23235">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11618?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Task" title="Task - A task that needs to be done.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-23235" href="https://qima.atlassian.net/browse/SP-23235">SP-23235</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-23235" href="https://qima.atlassian.net/browse/SP-23235">[2025 Q2] [Peformance Optimization] Analyze the performance bottleneck of timesheet and propose optimization solution</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>aims-service</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    X-Men
+</td>
+                    </tr>
+
+
+                <tr id="issuerow150725" rel="150725" data-issuekey="SP-23286" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-23286" href="https://qima.atlassian.net/browse/SP-23286">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11610?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Improvement" title="Improvement - An improvement or enhancement to an existing feature or task.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-23286" href="https://qima.atlassian.net/browse/SP-23286">SP-23286</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-23286" href="https://qima.atlassian.net/browse/SP-23286">[LT][Story] Sample photos in Report should generate in order</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>aims-service</span>,			        							<span>aims-web</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    X-Men
+</td>
+                    </tr>
+
+
+                <tr id="issuerow151111" rel="151111" data-issuekey="SP-23465" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-23465" href="https://qima.atlassian.net/browse/SP-23465">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11603?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Bug" title="Bug - A problem which impairs or prevents the functions of the product.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-23465" href="https://qima.atlassian.net/browse/SP-23465">SP-23465</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-23465" href="https://qima.atlassian.net/browse/SP-23465">[LT] Style sorting issue when there are more than 100</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>aims-service</span>,			        							<span>aims-web</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    X-Men
+</td>
+                    </tr>
+
+
+                <tr id="issuerow151352" rel="151352" data-issuekey="SP-23607" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-23607" href="https://qima.atlassian.net/browse/SP-23607">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11603?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Bug" title="Bug - A problem which impairs or prevents the functions of the product.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-23607" href="https://qima.atlassian.net/browse/SP-23607">SP-23607</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-23607" href="https://qima.atlassian.net/browse/SP-23607">[LT] Report - The 'UPC' field sorting issue</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>aims-service</span>,			        							<span>aims-web</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    X-Men
+</td>
+                    </tr>
+
+
+                <tr id="issuerow148809" rel="148809" data-issuekey="SP-22388" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-22388" href="https://qima.atlassian.net/browse/SP-22388">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11610?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Improvement" title="Improvement - An improvement or enhancement to an existing feature or task.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-22388" href="https://qima.atlassian.net/browse/SP-22388">SP-22388</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-22388" href="https://qima.atlassian.net/browse/SP-22388">[Q2][Claim Management] Customer Satisfaction Surveys: Survey Workflow</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>None</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Pioneer
+</td>
+                    </tr>
+
+
+                <tr id="issuerow148812" rel="148812" data-issuekey="SP-22391" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-22391" href="https://qima.atlassian.net/browse/SP-22391">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11610?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Improvement" title="Improvement - An improvement or enhancement to an existing feature or task.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-22391" href="https://qima.atlassian.net/browse/SP-22391">SP-22391</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-22391" href="https://qima.atlassian.net/browse/SP-22391">[Q2][Claim Management] Customer Satisfaction Surveys: Individual workflow for CS Surveys</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>None</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Pioneer
+</td>
+                    </tr>
+
+
+                <tr id="issuerow148813" rel="148813" data-issuekey="SP-22392" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-22392" href="https://qima.atlassian.net/browse/SP-22392">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11610?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Improvement" title="Improvement - An improvement or enhancement to an existing feature or task.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-22392" href="https://qima.atlassian.net/browse/SP-22392">SP-22392</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-22392" href="https://qima.atlassian.net/browse/SP-22392">[Q2][Claim Management] Customer Satisfaction Surveys: Add investigation level in investigation page for CS Surveys</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>None</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Pioneer
+</td>
+                    </tr>
+
+
+                <tr id="issuerow148814" rel="148814" data-issuekey="SP-22393" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-22393" href="https://qima.atlassian.net/browse/SP-22393">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11610?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Improvement" title="Improvement - An improvement or enhancement to an existing feature or task.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-22393" href="https://qima.atlassian.net/browse/SP-22393">SP-22393</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-22393" href="https://qima.atlassian.net/browse/SP-22393">[Q2][Claim Management] Customer Satisfaction Surveys: page for CS surveys in claim management</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>claim-service-cloud</span>,			        							<span>claim-cloud</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Pioneer
+</td>
+                    </tr>
+
+
+                <tr id="issuerow148954" rel="148954" data-issuekey="SP-22418" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-22418" href="https://qima.atlassian.net/browse/SP-22418">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11610?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Improvement" title="Improvement - An improvement or enhancement to an existing feature or task.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-22418" href="https://qima.atlassian.net/browse/SP-22418">SP-22418</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-22418" href="https://qima.atlassian.net/browse/SP-22418">[Q2][Claim Management] Customer Satisfaction Surveys: Add button "Create Survey" &amp; "Delete Survey"</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>claim-service-cloud</span>,			        							<span>claim-cloud</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Pioneer
+</td>
+                    </tr>
+
+
+                <tr id="issuerow149566" rel="149566" data-issuekey="SP-22790" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-22790" href="https://qima.atlassian.net/browse/SP-22790">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11610?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Improvement" title="Improvement - An improvement or enhancement to an existing feature or task.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-22790" href="https://qima.atlassian.net/browse/SP-22790">SP-22790</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-22790" href="https://qima.atlassian.net/browse/SP-22790">[Q2][Claim Management] Customer Satisfactory Survey: Email Templates</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>claim-service-cloud</span>,			        							<span>claim-cloud</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Pioneer
+</td>
+                    </tr>
+
+
+                <tr id="issuerow150075" rel="150075" data-issuekey="SP-23064" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-23064" href="https://qima.atlassian.net/browse/SP-23064">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11610?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Improvement" title="Improvement - An improvement or enhancement to an existing feature or task.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-23064" href="https://qima.atlassian.net/browse/SP-23064">SP-23064</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-23064" href="https://qima.atlassian.net/browse/SP-23064">[Integration][Guess] Specify the Standard DUPRO and Inline Inspection for DUPRO in the supplier confirmation email</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>psi-service</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Pioneer
+</td>
+                    </tr>
+
+
+                <tr id="issuerow151054" rel="151054" data-issuekey="SP-23436" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-23436" href="https://qima.atlassian.net/browse/SP-23436">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11610?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Improvement" title="Improvement - An improvement or enhancement to an existing feature or task.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-23436" href="https://qima.atlassian.net/browse/SP-23436">SP-23436</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-23436" href="https://qima.atlassian.net/browse/SP-23436">[2025 Q2][Claim Management] Survey email optimization &amp; wordings</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>NA</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Pioneer
+</td>
+                    </tr>
+
+
+                <tr id="issuerow144774" rel="144774" data-issuekey="SP-20587" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-20587" href="https://qima.atlassian.net/browse/SP-20587">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11618?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Task" title="Task - A task that needs to be done.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-20587" href="https://qima.atlassian.net/browse/SP-20587">SP-20587</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-20587" href="https://qima.atlassian.net/browse/SP-20587">[Pangu] [2025 Q2] SpringCloud upgrading - search-center-service-cloud</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>search-center-service-cloud</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Pangu
+</td>
+                    </tr>
+
+
+                <tr id="issuerow144798" rel="144798" data-issuekey="SP-20611" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-20611" href="https://qima.atlassian.net/browse/SP-20611">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11618?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Task" title="Task - A task that needs to be done.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-20611" href="https://qima.atlassian.net/browse/SP-20611">SP-20611</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-20611" href="https://qima.atlassian.net/browse/SP-20611">[Pangu] [2025 Q2] SpringCloud upgrading - audit-app-service-cloud</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>auditor-app-services</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Pangu
+</td>
+                    </tr>
+
+
+                <tr id="issuerow150101" rel="150101" data-issuekey="SP-23081" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-23081" href="https://qima.atlassian.net/browse/SP-23081">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11603?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Bug" title="Bug - A problem which impairs or prevents the functions of the product.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-23081" href="https://qima.atlassian.net/browse/SP-23081">SP-23081</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-23081" href="https://qima.atlassian.net/browse/SP-23081">#454169 sent from QIMA's IT Freshdesk platform</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>None</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Pangu
+</td>
+                    </tr>
+
+
+                <tr id="issuerow150651" rel="150651" data-issuekey="SP-23249" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-23249" href="https://qima.atlassian.net/browse/SP-23249">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11603?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Bug" title="Bug - A problem which impairs or prevents the functions of the product.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-23249" href="https://qima.atlassian.net/browse/SP-23249">SP-23249</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-23249" href="https://qima.atlassian.net/browse/SP-23249">[Audit]Unable to select any options</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>psi-web</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Pangu
+</td>
+                    </tr>
+
+
+                <tr id="issuerow150711" rel="150711" data-issuekey="SP-23277" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-23277" href="https://qima.atlassian.net/browse/SP-23277">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11615?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Story" title="Story - A user story. Created by JIRA Software - do not edit or delete.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-23277" href="https://qima.atlassian.net/browse/SP-23277">SP-23277</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-23277" href="https://qima.atlassian.net/browse/SP-23277">[Payments] Show bank information dynamically according to QIMA customer </a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>customer-service</span>,			        							<span>Public-API</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Pangu
+</td>
+                    </tr>
+
+
+                <tr id="issuerow149177" rel="149177" data-issuekey="SP-22568" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-22568" href="https://qima.atlassian.net/browse/SP-22568">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11618?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Task" title="Task - A task that needs to be done.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-22568" href="https://qima.atlassian.net/browse/SP-22568">SP-22568</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-22568" href="https://qima.atlassian.net/browse/SP-22568">[2025 Q2] [Mermaid] [DevOps] Jenkins job to auto create tag in production deploy job</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>back-office</span>,			        							<span>customer-service</span>,			        							<span>irp-service</span>,			        							<span>irp-web</span>,			        							<span>LT-model</span>,			        							<span>psi-service</span>,			        							<span>Public-API</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Mermaid
+</td>
+                    </tr>
+
+
+                <tr id="issuerow149697" rel="149697" data-issuekey="SP-22854" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-22854" href="https://qima.atlassian.net/browse/SP-22854">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11615?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Story" title="Story - A user story. Created by JIRA Software - do not edit or delete.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-22854" href="https://qima.atlassian.net/browse/SP-22854">SP-22854</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-22854" href="https://qima.atlassian.net/browse/SP-22854">[myQIMA][LT] Cancel reasons change from free-text to selection in myQIMA inquiry/quotation page to avoid dirty data - frontend</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>None</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Mermaid
+</td>
+                    </tr>
+
+
+                <tr id="issuerow151225" rel="151225" data-issuekey="SP-23562" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-23562" href="https://qima.atlassian.net/browse/SP-23562">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11610?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Improvement" title="Improvement - An improvement or enhancement to an existing feature or task.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-23562" href="https://qima.atlassian.net/browse/SP-23562">SP-23562</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-23562" href="https://qima.atlassian.net/browse/SP-23562">[myQIMA/ACA] NPS data tracking improvement</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>customer-service</span>,			        							<span>Public-API</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Mermaid
+</td>
+                    </tr>
+
+
+                <tr id="issuerow151347" rel="151347" data-issuekey="SP-23603" class="issuerow">
+                                            <td class="issuetype">    <a class="issue-link" data-issue-key="SP-23603" href="https://qima.atlassian.net/browse/SP-23603">
+            <img src="https://qima.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/11603?size=medium" height="16" width="16" border="0" align="absmiddle" alt="Bug" title="Bug - A problem which impairs or prevents the functions of the product.">
+        </a>
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="SP-23603" href="https://qima.atlassian.net/browse/SP-23603">SP-23603</a>
+</td>
+                                            <td class="summary"><p>
+                <a class="issue-link" data-issue-key="SP-23603" href="https://qima.atlassian.net/browse/SP-23603">[myQIMA] Can't trigger emails when creating a comment in interactive report</a>
+    </p>
+</td>
+                                            <td class="customfield_12605">
+
+
+    <div class="shorten" id="customfield_12605-field">
+        							<span>aca-new</span>			            </div>
+</td>
+                                            <td class="customfield_12628">    Mermaid
+</td>
+                    </tr>
+        </tbody>
+    </table>
+    <div class="end-of-stable-message"></div>
+            </div>
+<script>
+require(["jquery"], function ($) {
+    // Prevent click events from doing stuff in this view
+    $(function(){
+        $('#printable-content *').unbind('click').click(function(e){ e.preventDefault() }).removeAttr('onclick');
+    });
+});
+</script>
+
+
+</body></html>

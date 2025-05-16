@@ -1,0 +1,24 @@
+Back End
+aims-service
+customer-service
+irp-service
+psi-service
+
+Front End
+aims-web
+auditor-app-services
+back-office
+irp-web
+psi-web
+public-api
+
+EKS services
+aca-new
+claim-cloud
+claim-service-cloud
+lt-external-service-cloud
+route-service-cloud
+search-center-service-cloud
+
+Dependency services
+lt-dependency

@@ -1,0 +1,5 @@
+   # JIRA cookies and sensitive files
+   *cookies.pkl
+   jira_cookies.pkl
+   jira_page_source.html
+   jira_debug_screenshot.png

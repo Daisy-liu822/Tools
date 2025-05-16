@@ -99,17 +99,13 @@ def update_yaml_config(input_text: str, yaml_path: str = 'JenkisBuild/config.yam
 # 示例使用
 input_text = """
 Back End=
-aims-service=release-5.3.33
-psi-service=release-8.115
-wqs-service=release-1.0.98
-customer-service=release-8.114
+aims-service=release-5.3.41
+psi-service=release-8.120
+customer-service=release-8.120
 Front End=
-aca=release-1.12.71
-aims-web=release-5.3.33
-back-office=release-8.114
-program-web=release-5.3.33
-psi-web=release-8.115
-public-api=release-1.2.217
+aims-web=release-5.3.41
+public-api=release-1.2.221
+psi-web=release-8.120
 """
 
 update_yaml_config(input_text) 
